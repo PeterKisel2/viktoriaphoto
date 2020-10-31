@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Lora&display=swap');
+@import "./_functions.scss";
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #454545;
+	background-color: rgb(69,69,69);
+}
+
+.head_container {
+	width: auto;
+	margin: 0 auto;
+
+		img {
+			float: left;
+		}
+}
+
+.menu ul {
+	margin-top: 20px;
+	float: left;
+
+	li {
+	display: inline-block;
+	height: calc-em(100);
+
+		a {
+			text-decoration: none;
+			font-family: 'Dancing Script', cursive;
+			font-size: calc-em(40);
+			color: white;
+			vertical-align: center;
+
+		}
+	}
+}

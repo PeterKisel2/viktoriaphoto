@@ -48,3 +48,13 @@ Thumbs.db
 *.mov
 *.wmv
 
+#co naviac ignorovat
+CSS
+*.gif
+*.jpg
+*.jpg
+*.JPEG
+*.JPEG
+*.png
+*.tiff
+*.bmp
