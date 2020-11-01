@@ -17,7 +17,7 @@ body {
 }
 
 .head_container {
-	width: auto;
+	height: calc-em(150);
 	margin: 0 auto;
 
 		img {
@@ -25,21 +25,52 @@ body {
 		}
 }
 
-.menu ul {
-	margin-top: 20px;
-	float: left;
+.menu {
+	height: 100%;
+	position: relative;
 
-	li {
-	display: inline-block;
-	height: calc-em(100);
+	ul {
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	
+		li {
+			list-style: none;
+			height: calc-em(50);
+			margin: calc-em(50) calc-em(20);
 
-		a {
-			text-decoration: none;
-			font-family: 'Dancing Script', cursive;
-			font-size: calc-em(40);
-			color: white;
-			vertical-align: center;
+			a {	
+				display: block;
+				text-decoration: none;
+				font-family: 'Dancing Script', cursive;
+				font-size: calc-em(40);
+				color: white;
+				}
+			
+			.sub {
+				position: absolute;
+				z-index: 50;
+				width: 35%;
+				display:none;
 
+				li {
+					float: none;
+					margin: calc-em(15) 0;
+				}
+			}
+		}
+
+		li:last-child {
+			margin-right: calc-em(100);
+		}
+
+		li:hover .sub, .sub {
+			display: block;
+		}
+
+		li:hover a {
+			color: rgb(2, 149, 175);
 		}
 	}
 }
