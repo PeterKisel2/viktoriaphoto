@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Lora&display=swap');
 @import "./_functions.scss";
+@import "./_variables.scss";
 
 * {
 	margin: 0;
@@ -29,7 +30,7 @@ body {
 	height: 100%;
 	position: relative;
 
-	ul {
+	.primary {
 	height: 100%;
 	display: flex;
 	flex-direction: row;
@@ -45,20 +46,24 @@ body {
 				text-decoration: none;
 				font-family: 'Dancing Script', cursive;
 				font-size: calc-em(40);
-				color: white;
+				color: $col-font-primary;
 				}
 			
 			.sub {
 				position: absolute;
 				z-index: 50;
-				width: 35%;
 				display:none;
 
 				li {
 					float: none;
 					margin: calc-em(15) 0;
 				}
-			}
+
+				li:hover a {
+					color: $col-font-primary;
+				}
+			}	
+
 		}
 
 		li:last-child {
@@ -70,7 +75,11 @@ body {
 		}
 
 		li:hover a {
-			color: rgb(2, 149, 175);
+			transition: color 1s;
+			color: $col-font-secondary;
+
 		}
+
+
 	}
 }
