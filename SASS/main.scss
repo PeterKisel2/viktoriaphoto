@@ -13,18 +13,30 @@
 }
 
 body {
-	background-color: #454545;
-	background-color: rgb(69,69,69);
+	background-color: $col-background;
+	width: 100vw;
 }
 
+//header: logo + nav menu
 .head_container {
 	height: calc-em(150);
 	margin: 0 auto;
+	background-color: darken($color: $col-background, $amount: 10%);
 
-		img {
+		#logo {
+			background-image: url("../misc/logo biele.png");
+			background-position: center;
+			background-size: cover;
+			display: block;
 			float: left;
+			text-indent: -9999px;
+			width: calc-em(250);
+			height: calc-em(95);
+			margin: calc-em(27) 0;
+			position: relative;
+			z-index: 10;
 		}
-}
+	}
 
 .menu {
 	height: 100%;
@@ -82,4 +94,17 @@ body {
 
 
 	}
+}
+//slick slider
+article {
+	width: calc-em(1180);
+	margin: 0 auto;
+}
+
+.slider {
+	width: 100%;
+
+		img {
+			width: 100%;
+		}
 }
