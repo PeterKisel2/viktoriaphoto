@@ -50,11 +50,11 @@ Thumbs.db
 
 #co naviac ignorovat
 CSS
-*.gif
-*.jpg
-*.JPG
-*.JPEG
-*.jpeg
-*.png
-*.tiff
-*.bmp
+#*.gif
+#*.jpg
+#*.JPG
+#*.JPEG
+#*.jpeg
+#*.png
+#*.tiff
+#*.bmp
