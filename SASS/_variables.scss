@@ -2,3 +2,13 @@
 $col-background: #454545;
 $col-font-primary: #D9D9D9;
 $col-font-secondary: #0295AF;
+
+$gradient-start: darken($color: $col-background, $amount: 10%);
+$gradient-end: darken($color: $col-background, $amount: 10%);
+
+//font families
+$font-primary: 'Dancing Script', cursive;
+$font-secondary: 'Lora', serif;
+
+//font awesome PATH
+$fa-font-path: "../fontawesome/webfonts"
