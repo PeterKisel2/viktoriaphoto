@@ -50,3 +50,14 @@ Thumbs.db
 
 #co naviac ignorovat
 CSS
+<<<<<<< HEAD
+=======
+#*.gif
+#*.jpg
+#*.JPG
+#*.JPEG
+#*.jpeg
+#*.png
+#*.tiff
+#*.bmp
+>>>>>>> origin/Marcel
