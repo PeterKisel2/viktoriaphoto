@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 @import "./_functions.scss";
 @import "./_variables.scss";
 @import "../fontawesome/scss/fontawesome.scss";
@@ -80,7 +81,7 @@ img {
 		> .list-item {
 			display: flex;
 			position: relative;
-			font-family: $font-primary;
+			font-family: $font-menu;
 			font-size: calc-em(30);
 			width: calc-em(90);
 			justify-content: space-evenly;

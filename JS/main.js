@@ -9,7 +9,7 @@ $(document).ready(function(){
       speed: 1200,
       adaptiveHeight: false,
       focusOnSelect: true,
-      arrows: false,
+      arrows: false
     });
   });
 
