@@ -7,9 +7,18 @@ $gradient-start: darken($color: $col-background, $amount: 10%);
 $gradient-end: darken($color: $col-background, $amount: 10%);
 
 //font families
-$font-menu: 'Dancing Script', cursive;
+$font-menu: 'Oswald', sans-serif;
 $font-primary: 'Dancing Script', cursive;
 $font-secondary: 'Lora', serif;
 
+//font size
+$font-menu-size: calc-em(25);
+
 //font awesome PATH
-$fa-font-path: "../fontawesome/webfonts"
+$fa-font-path: "../fontawesome/webfonts";
+
+//footer height
+$footer-height: calc-em(70);
+
+//header height
+$header-height: calc-em(70);
