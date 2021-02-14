@@ -2,3 +2,12 @@ $browser-em: 16;
 @function calc-em($pixels, $ems: $browser-em) {
     @return ($pixels / $ems) * 1em;
 }
+
+$fromWidth: 850px;
+$toWidth: 1240px;
+@function between($from, $to, $fromWidth, $toWidth) {
+    $slope: ($to - $from) / ($toWidth - $fromWidth);
+    $base: $from - $slope * $fromWidth;
+  
+    @return calc(#{$base} + #{100vw * $slope});
+  }

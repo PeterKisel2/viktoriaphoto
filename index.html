@@ -4,6 +4,7 @@
     <title>Viktória Photography</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./CSS/main.css" type="text/css">
+    <link rel="stylesheet" href="./flipdown-master/flipdown.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" /> 
     <meta name="wiewport" content="width=device-width, user-scalable=yes, initial-scale=1.0">
@@ -26,14 +27,14 @@
                 <li class="list-item">
                     <a href="sluzby.html">Služby</a>
                     <ul class="sub">
-                        <li class="list-item"><a href="">Svadby</a></li>
-                        <li class="list-item"><a href="">Rodina a deti</a></li>
-                        <li class="list-item"><a href="">Portréty</a></li>
-                        <li class="list-item"><a href="">Produktové a firemné</a></li>
+                        <li class="list-item"><a href="sluzby.html#weddings">Svadby</a></li>
+                        <li class="list-item"><a href="sluzby.html#family">Rodina a deti</a></li>
+                        <li class="list-item"><a href="sluzby.html#portraits">Portréty</a></li>
+                        <li class="list-item"><a href="sluzby.html#product_photo">Produktové a firemné</a></li>
                     </ul>
                 </li>
                 <li class="list-item"><a href="">Blog</a></li>
-                <li class="list-item"><a href="">Portfólio</a></li>
+                <li class="list-item"><a href="portfolio.html">Portfólio</a></li>
                 <li class="list-item"><a href="">Kontakt</a></li>
             </ul>
             <div class="lang-select">
@@ -44,24 +45,36 @@
         
     </header>
     <article class="slider-container">
-        <div class="slider">
-            <img src="./misc/Slideshow/1.JPG" alt="">
-            <img src="./misc/Slideshow/2.jpg" alt="">
-            <img src="./misc/Slideshow/3.JPG" alt="">
-            <img src="./misc/Slideshow/4.JPG" alt="">
+        <div class="slider-portrait">
+            <img src="./misc/Slideshow/Na výšku/1.jpg" alt="">
+            <img src="./misc/Slideshow/Na výšku/4.jpg" alt="">
+            <img src="./misc/Slideshow/Na výšku/3.jpg" alt="">
+            <img src="./misc/Slideshow/Na výšku/6.jpg" alt="">
+        </div>
+        <div class="slider-landscape">
+            <img src="./misc/Slideshow/Na šírku/1.jpg" alt="">
+            <img src="./misc/Slideshow/Na šírku/2.jpg" alt="">
+            <img src="./misc/Slideshow/Na šírku/3.jpg" alt="">
+            <img src="./misc/Slideshow/Na šírku/4.jpg" alt="">
         </div>
     </article>
     <aside>
 
     </aside>
     <footer class="footer-container">
-        <i class="fas fa-info"></i>
-        <div class="speech-bubble">
-           <p>
-                Stránku vytvoril Peter Kisel
-                <br>
-                <a href = "mailto: peter.kisel2@gmail.com">peter.kisel2@gmail.com</a>
-           </p>
+        <div class="left-container">
+            <div class="footer-info">
+                <i class="fas fa-info"></i>
+            </div>
+            <div class="bubble-container">
+                <div class="speech-bubble">
+                <p>
+                        Stránku vytvoril Peter Kisel
+                        <br>
+                        <a href = "mailto: peter.kisel2@gmail.com">peter.kisel2@gmail.com</a>
+                </p>
+                </div>
+            </div>
         </div> 
         <div class="footer-contacts">
             <div class="wrapper-left">
@@ -83,10 +96,10 @@
 
         <div class="footer-social">
             <a href="https://www.facebook.com/Vikt%C3%B3ria-Photography-107026907340187" target="_blank">
-                <i class="fab fa-facebook-square fa-3x"></i>
+                <i class="fab fa-facebook-square"></i>
             </a>
             <a href="https://www.instagram.com/lenart.viktoria/" target="_blank">
-                <i class="fab fa-instagram-square fa-3x"></i>
+                <i class="fab fa-instagram-square"></i>
             </a>   
         </div>
 
@@ -96,6 +109,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous"></script>
     <script src="JS/main.js"></script>
+    <script src="flipdown-master/flipdown.js"></script>
 </body>
 
 </html>
