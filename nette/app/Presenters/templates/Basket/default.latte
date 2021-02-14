@@ -1,0 +1,58 @@
+{block content}
+
+<h1 n:block="title">Nákupný košík</h1>
+
+
+<div class="wrapper mt-4 mb-4" n:snippet="productsnip">
+{if count($basketProducts) < 1}
+        <h2>Košík je momentálne prázdny</h2>
+
+    {else}
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Názov
+                    </th>
+                    <th>
+                        Cena
+                    </th>
+                    <th>
+                        Pocet kusov
+                    </th>
+                    <th>
+                        Cena celkom
+                    </th>
+                    <th>
+                    
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {foreach $basketProducts as $post}
+                    <tr>
+                        <td><a n:href="Products:edit $post->id">{$post->name}</a></td>
+                        <td>{$post->price} &euro;</td>
+                        <td><a n:href="decrease! $post->id" class="ajax badge badge-info">-</a> {$post->amount} <a n:href="increase! $post->id" class="ajax badge badge-info">+</a></td>
+                        <td>
+                            {$post->price * $post->amount} &euro;
+                        </td>
+                        <td>
+                            <a n:href="delete! $post->id" class="ajax btn btn-danger">Zmazať</a>
+                        </td>
+                    </tr>
+                    {/foreach}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5" class="text-right">
+                        <span>Celkovo produktov {$itemsCount} ks za <strong>{$totalPrice} &euro;</strong></span>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+	{/if}
+</div>
+{/block}

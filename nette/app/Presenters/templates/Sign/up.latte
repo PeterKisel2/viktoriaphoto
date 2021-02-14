@@ -1,0 +1,41 @@
+{block content}
+<h1 n:block=title>Registrácia</h1>
+
+{control signUpForm}
+
+
+{define script}
+    <script>
+    
+    //Ajax kontrola loginu pre lepsie UX. Samozrejme je to osetrene aj cez PHP
+     var timer;
+
+    $('.checkUnique').on('keyup', function () {
+    clearTimeout(timer);       // clear timer
+    timer = setTimeout(ajaxRequest, 1000);
+    $('.wrapper').empty('')
+    });
+
+
+    $('.checkUnique').on('keydown', function () {
+    clearTimeout(timer);
+    });
+
+    function ajaxRequest(value) {
+        let login = $('.checkUnique').val();
+        var div = $('<div/>', { class: 'wrapper' });
+        $('.checkUnique').after(div);
+        naja.makeRequest('POST', {link CheckUnique!}, {
+            'login': login
+        }).then((response) => {
+            if(response.response){
+                div.append('<span class="text-danger">Tento login je obsadeny</span>');
+                $('input[name=send]').prop("disabled", true);
+            }else{
+                div.append('<span class="text-success">Tento login je volny</span>');
+                $('input[name=send]').prop("disabled", false);
+            }
+        }); 
+    };
+    </script>
+{/define}

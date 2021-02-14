@@ -1,0 +1,13 @@
+# Build artifacts
+dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dependency management
+node_modules/
+
+# Coverage reports
+coverage/
+.nyc_output

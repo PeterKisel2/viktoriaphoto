@@ -1,0 +1,28 @@
+
+{block content}
+
+<h1 n:block="title">SuperBlog</h1>
+
+<a n:href="Post:create" class="btn btn-info" n:if="$user->isLoggedIn()">Vytvořit příspěvek</a>
+
+<div class="wrapper" n:snippet="homesnip">
+	{foreach $posts as $post}
+
+	<div class="post card mt-4 mb-4">
+		<div class="card-header">
+			<h2><a n:href="Post:show $post->id">{$post->title}</a></h2>
+		</div>
+		<div class="card-body">
+			<div>{$post->content|truncate:200}</div>
+		</div>
+		<div class="date card-footer">{$post->created_at|date:'F j, Y'} od {$post->user['fullname']}
+			{if $user->loggedIn && (($user->id == $post->user['id']) || $user->isInRole('admin'))} 
+				<a n:href="delete! $post->id" class="ajax btn btn-warning">Zmazať</a>
+			{/if}
+		</div>
+
+
+		
+	</div>
+	{/foreach}
+</div>

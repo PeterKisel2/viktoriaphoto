@@ -1,0 +1,32 @@
+{block content}
+
+<h1 n:block="title">Eshop</h1>
+
+<a n:href="Products:list" class="btn btn-info" n:if="$user->isLoggedIn() && $user->isInRole('admin')">Administrovať produkty</a>
+
+<div class="wrapper row">
+    
+    {if count($products) < 1}
+        <h2>Eshop je momentalne prazdny</h2>
+
+    {else}
+        {foreach $products as $post}
+            <div class="col-md-4 col-6">
+                <div class="post card mt-4 mb-4">
+                    <div class="card-header">
+                        <h2><a n:href="Products:show $post->id">{$post->name}</a></h2>
+                    </div>
+                    <div class="card-body">
+                        <div>{$post->description}</div>
+                    </div>
+                    <div class="card-footer">
+                        <p>Cena: {$post->price} &euro;</p>
+                        <a n:href="addToBasket! $post->id" class="ajax btn btn-success">Pridať do košíka</a>
+                    </div>
+                </div>
+            </div>
+        {/foreach}
+    {/if}
+	
+</div>
+{/block}

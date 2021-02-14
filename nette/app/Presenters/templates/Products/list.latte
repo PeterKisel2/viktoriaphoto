@@ -1,0 +1,43 @@
+
+{block content}
+
+<h1 n:block="title">Administrácia eshopu</h1>
+
+<a n:href="Products:create" class="btn btn-info" n:if="$user->isLoggedIn() && $user->isInRole('admin')">Vytvoriť produkt</a>
+
+<div class="wrapper mt-4 mb-4" n:snippet="productsnip">
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Názov
+                    </th>
+                    <th>
+                        Cena
+                    </th>
+                    <th>
+                        Kratky popis
+                    </th>
+                    <th>
+                        Akcie
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {foreach $products as $post}
+                    <tr>
+                        <td><a n:href="Products:edit $post->id">{$post->name}</a></td>
+                        <td>{$post->price} €</td>
+                        <td>{$post->description|truncate:200}</td>
+                        <td>
+                            <a n:href="edit $post->id" class="btn btn-warning">Editovať</a>
+                            <a n:href="delete! $post->id" class="ajax btn btn-danger">Zmazať</a>
+                        </td>
+                    </tr>
+                    {/foreach}
+            </tbody>
+        </table>
+    </div>
+	
+</div>

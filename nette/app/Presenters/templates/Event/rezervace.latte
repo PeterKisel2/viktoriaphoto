@@ -1,0 +1,200 @@
+{block title}
+    <h1>Rezervace události</h1>
+{/block}
+
+{block content}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>Rezervace události</h1>
+        </div>
+        
+        <div class="col-md-6 col-12">
+            {snippet wrapper}
+            {form registrationForm class => "registrationForm"}
+                <fieldset>
+                    <div class="form-group">
+                        <label n:name="pocet_ucastniku">{$form[pocet_ucastniku]->label}</label>
+                        <input n:name="pocet_ucastniku" class="form-control" />
+                    </div>
+                </fieldset>
+                <fieldset id="participant">
+                    <h3 class="title">Osobní údaje objednatele</h3>
+                    <div class="form-group row">
+                        <div class="col-md-3 col-12">
+                            <label n:name="jmeno">{$form[jmeno]->label}</label>
+                        </div>
+                        <div class="col-md-5 col-12">
+                            <input n:name="jmeno" class="form-control" />
+                        </div>
+                        <div class="col-md-4 col-12">
+                            {@$form[jmeno]->options[desc]}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-3 col-12">
+                            <label n:name="prijmeni">{$form[prijmeni]->label}</label>
+                        </div>
+                        <div class="col-md-5 col-12">
+                            <input n:name="prijmeni" class="form-control" />
+                        </div>
+                        <div class="col-md-4 col-12">
+                            {@$form[prijmeni]->options[desc]}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-3 col-12">
+                            <label n:name="email">{$form[email]->label}</label>
+                        </div>
+                        <div class="col-md-5 col-12">
+                            <input n:name="email" class="form-control" />
+                            {if $form->hasErrors()}
+                                <small class="text-primary mt-2">{$form['email']->getError()}</small>
+                            {/if}
+                        </div>
+                        <div class="col-md-4 col-12">
+                            {@$form[email]->options[desc]}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-3 col-12">
+                            <label n:name="mobil">{$form[mobil]->label}</label>
+                        </div>
+                        <div class="col-md-5 col-12">
+                            <input n:name="mobil" class="form-control" />
+                        </div>
+                        <div class="col-md-4 col-12">
+                            {@$form[mobil]->options[desc]}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-3 col-12">
+                            <label n:name="datum_narozeni">{$form[datum_narozeni]->label}</label>
+                        </div>
+                        <div class="col-md-5 col-12">
+                            <input n:name="datum_narozeni" class="form-control" />
+                        </div>
+                        <div class="col-md-4 col-12">
+                            {@$form[datum_narozeni]->options[desc]}
+                        </div>
+                    </div>
+                </fieldset>
+    
+                <fieldset>
+                    <h2>Fakturační údaje</h2>
+                    <div class="form-group row">
+                        <div class="col-md-3 col-12">
+                            <label n:name="ulice">{$form[ulice]->label}</label>
+                        </div>
+                        <div class="col-md-5 col-12">
+                            <input n:name="ulice" class="form-control" />
+                        </div>
+                        <div class="col-md-4 col-12">
+                            {@$form[ulice]->options[desc]}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-3 col-12">
+                            <label n:name="mesto">{$form[mesto]->label}</label>
+                        </div>
+                        <div class="col-md-5 col-12">
+                            <input n:name="mesto" class="form-control" />
+                        </div>
+                        <div class="col-md-4 col-12">
+                            {@$form[mesto]->options[desc]}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-3 col-12">
+                            <label n:name="psc">{$form[psc]->label}</label>
+                        </div>
+                        <div class="col-md-5 col-12">
+                            <input n:name="psc" class="form-control" />
+                        </div>
+                        <div class="col-md-4 col-12">
+                            {@$form[psc]->options[desc]}
+                        </div>
+                    </div>
+                </fieldset>
+
+                {for $int = 2; $int <= $participants; $int++}
+                <fieldset class="participants" id="part_{$int}">
+                    <h3 class="title">Osobní údaje {$int}. ucastnika</h3>
+                    <div class="form-group row">
+                        <div class="col-md-3 col-12">
+                            <label for="participant_{$int}_jmeno">{$form[jmeno]->label}</label>
+                        </div>
+                        <div class="col-md-5 col-12">
+                            <input id="participant_{$int}_jmeno" name="participants[]" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-3 col-12">
+                            <label fpr="participant_{$int}_prijmeni">{$form[prijmeni]->label}</label>
+                        </div>
+                        <div class="col-md-5 col-12">
+                            <input id="participant_{$int}_prijmeni" name="participants[]" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-3 col-12">
+                            <label for="participant_{$int}_email">{$form[email]->label}</label>
+                        </div>
+                        <div class="col-md-5 col-12">
+                            <input id="participant_{$int}_email" name="participants[]" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-3 col-12">
+                            <label for="participant_{$int}_mobil">{$form[mobil]->label}</label>
+                        </div>
+                        <div class="col-md-5 col-12">
+                            <input id="participant_{$int}_mobil" name="participants[]" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-3 col-12">
+                            <label for="participant_{$int}_datum_narozeni">{$form[datum_narozeni]->label}</label>
+                        </div>
+                        <div class="col-md-5 col-12">
+                            <input id="participant_{$int}_datum_narozeni" name="participants[]" class="form-control" />
+                        </div>
+                    </div>
+                </fieldset>
+                {/for}
+
+                <div class="d-flex justify-content-between">
+                    {* <a n:href=":Front:Event:detail $event->getId()" class="link">Zpět do události</a> *}
+                    <button class="btn btn-primary" type="submit">Odeslat</button>
+                </div>
+            {/form}
+        {/snippet}
+        </div>
+
+        <div class="offset-md-1 col-md-5 col-12">
+            <div class="row">
+                <div class="col-3">
+
+                </div>
+                <div class="col-9">
+                    <h2>Máš nějaký dotaz?</h2>
+                    <h3>Vezmi telefon do ruky <br />
+                        a napiš e-mail, nebo zavolej. :)</h3>
+        
+                    <h3>E-mail: otazka@laetofenix.cz</h3>
+                    <h3>Telefon: +420 603 125 154</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+
+{block script}
+    <script>
+        $(document).on('change', 'input[name="pocet_ucastniku"]', function (e) {
+            naja.uiHandler.submitForm(this.form);
+        });
+    </script>
+
+{/block}

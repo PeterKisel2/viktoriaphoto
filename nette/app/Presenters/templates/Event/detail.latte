@@ -1,0 +1,76 @@
+{block content}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-12">
+            <img src="https://via.placeholder.com/570x425" alt="" class="w-100">
+        </div>
+        <div class="col-md-6 col-12">
+            <h2>{$event->getTitle()}</h2>
+            <div class="content">
+                <p>
+                    Termin: {$event->getFullTime()}
+                </p>
+                <p>
+                    Lokace: 
+                </p>
+                <p>
+                    Doprava: 
+                </p>
+                <p>
+                    Strava:
+                </p>
+                <div class="d-flex flex-column align-items-center">
+                    <div>
+                        <div>
+                            {$event->getPrice()} Kč
+                        </div>
+                        <div>
+                            <a n:href=":Front:Event:rezervace $event->getId()" class="btn btn-primary">Rezervovat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-12 my-4">
+            <h2 class="mb-3">Co tě na události s námi čeká?</h2>
+
+            <div class="content">
+                {* {$event->getContent()} *}
+            </div>
+        </div>
+
+        <div class="col-md-6 col-12 my-4">
+            <h2 class="mb-3">Kdo tě událostí bude provázet?</h2>
+
+            <div class="lectors row my-3">
+                <div n:foreach="$event->getLeaders() as $leader" class="lector col-md-6 col-12 d-flex flex-column align-items-center">
+                    <img src="https://via.placeholder.com/250" alt="" class="w-100">
+                    <h3>
+                        {$leader->getFirstName()}
+                        {$leader->getLastName()}
+                    </h3>
+                    <div>
+                        <span n:foreach="$leader->getRoles() as $role">{$role}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+
+                </div>
+                <div class="col-9">
+                    <h2>Máš nějaký dotaz?</h2>
+                    <h3>Vezmi telefon do ruky <br />
+                        a napiš e-mail, nebo zavolej. :)</h3>
+        
+                    <h3>E-mail: otazka@laetofenix.cz</h3>
+                    <h3>Telefon: +420 603 125 154</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}

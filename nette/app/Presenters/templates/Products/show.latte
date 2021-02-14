@@ -1,0 +1,15 @@
+{block content}
+<p><a n:href="Products:default" class="btn btn-primary">← Na výpis produktov</a></p>
+
+<div class="card mt-2 mb-4">
+    <div class="card-header">
+        <h1 n:block="title">{$post->name}</h1>
+        <span class="small">{$post->description}</span>
+    </div>
+
+    <div class="card-body">
+        <div class="">{$post->price} &euro;</div>
+        <div class="post">{$post->content}</div>
+    </div>
+</div>
+{/block}
