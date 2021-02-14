@@ -50,8 +50,6 @@ Thumbs.db
 
 #co naviac ignorovat
 CSS
-<<<<<<< HEAD
-=======
 #*.gif
 #*.jpg
 #*.JPG
@@ -60,4 +58,5 @@ CSS
 #*.png
 #*.tiff
 #*.bmp
->>>>>>> origin/Marcel
+
+nette
