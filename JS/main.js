@@ -2,7 +2,7 @@
 slick slider (with media query)
 **/
 
-$(document).ready(function(){
+$(document).ready( function(){
   const matchResult = window.matchMedia('(max-width: 850px)');
     
     
@@ -84,7 +84,7 @@ $(document).ready(function(){
       img_container = $(".img-container")
 
   $(".img-container").hide();
-  $(".gallery").find("a").click(function (e) {
+  $(".image").find("a").click(function (e) {
 
       var href = $(this).attr("href");
           image = $("<img>", { src: href});
