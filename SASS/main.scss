@@ -9,6 +9,7 @@
 /**
 	CLEAR DEFAULT
 **/
+/* #region  CLEAR DEFAULT STYLE */
 * {
 	margin: 0;
 	padding: 0;
@@ -29,7 +30,7 @@ a {
 }
 
 body {
-	background-color: $col-font-primary;
+	background-color: $col-background;
 }
 
 .main-site {
@@ -37,21 +38,24 @@ body {
 	height: 100vh;
 	overflow: hidden;
 }
+/* #endregion */
 
 /**
 	HEADER
 **/
+/* #region  HEADER */
 .head-container {
 	position: sticky;
 	top: 0;
 	height: $header-height;
 	margin: 0 auto;
-	background-color: darken($color: $col-background, $amount: 10%);
+	background-color: darken($color: $col-font-primary, $amount: 10%);
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	z-index: 10;
 	width: 100%;
+	color: $col-font-secondary;
 }
 
 #logo {
@@ -82,6 +86,7 @@ body {
 
 #bars {
 	display: none;
+	color: $col-font-secondary;
 }
 
 .primary {
@@ -102,6 +107,7 @@ body {
 		> a {
 			display: flex;
 			text-align: center;
+			color: $col-font-secondary;
 		}
 	}
 }
@@ -125,17 +131,19 @@ transform: translateX(-50%);
 		position: relative;
 		transform: scale(0);
 		background: $gradient-end;
-		
-		
 
 		&:first-child {
 			margin-top: calc-em(15);
+		}
+
+		a {
+			color: $col-font-secondary;
 		}
 	}
 }
 
 .primary .list-item:hover {
-	background-color: darken($color: $col-background, $amount: 50%);
+	background-color: darken($color: $col-font-primary, $amount: 50%);
 	transition: background-color 350ms ease-in;
 	
 
@@ -165,11 +173,12 @@ transform: translateX(-50%);
 		display: block;
 		line-height: calc-em(20);
 		margin-right: calc-em(15);
+		color: $col-font-secondary;
 	}
 }
+/* #endregion */
 
 	
-
 /**
 	SLIDER
 **/
@@ -194,6 +203,7 @@ transform: translateX(-50%);
 /**
 	FOOTER
 **/
+/* #region  FOOTER */
 .footer-container {
 
 	display: flex;
@@ -202,7 +212,7 @@ transform: translateX(-50%);
 	position: sticky;
 	z-index: 10;
 	bottom: 0;
-	background-color: darken($color: $col-background, $amount: 10%);
+	background-color: darken($color: $col-font-primary, $amount: 10%);
 	align-items: center;
 
 }
@@ -210,6 +220,10 @@ transform: translateX(-50%);
 .footer-info {
 	display: flex;
 	height: calc-em(23);
+	
+	i {
+		color: $col-font-secondary;
+	}
 }	
 
 .fa-info {
@@ -217,7 +231,7 @@ transform: translateX(-50%);
 	justify-content: center;
 	line-height: calc-em(20);
 	border-radius: 50%;
-	border: solid 1px $col-font-primary;
+	border: solid 1px $col-font-secondary;
 	width: calc-em(23);
 	height: calc-em(23);
 	margin: 0 calc-em(10);
@@ -239,14 +253,18 @@ transform: translateX(-50%);
 
 .speech-bubble {
 	display: none;
-	background: darken($color: $col-background, $amount: 50%);
+	background: darken($color: $col-font-primary, $amount: 50%);
 	border-radius: .4em;
 	font-size: 0.8rem;
 	font-family: $font-secondary;
-	color: $col-font-primary;
+	color: $col-font-secondary;
 	padding: calc-em(10);
 	text-align: center;
 	margin-left: calc-em(18);
+
+	p, a {
+		color: $col-font-secondary;
+	}
 }
 
 .speech-bubble:after {
@@ -257,7 +275,7 @@ transform: translateX(-50%);
 	width: 0;
 	height: 0;
 	border: 20px solid transparent;
-	border-right-color: darken($color: $col-background, $amount: 50%);
+	border-right-color: darken($color: $col-font-primary, $amount: 50%);
 	border-left: 0;
 	margin-top: -20px;
 	margin-left: -20px;
@@ -271,10 +289,11 @@ transform: translateX(-50%);
 .wrapper-left, .wrapper-right {
 	width: 50%;
 
-	h4, p {
+	h4, p, a {
 	font-family: $font-secondary;
 	font-size: 0.8rem;
 	text-align: center;
+	color: $col-font-secondary;
 	}
 }
 
@@ -295,6 +314,10 @@ transform: translateX(-50%);
 		display: flex;
 		text-decoration: none;
 		margin-right: calc-em(10);
+
+		i {
+			color: $col-font-secondary;
+		}
 		
 		
 		&:hover {
@@ -308,11 +331,13 @@ transform: translateX(-50%);
 		}
 	}
 }
+/* #endregion */
 
 /**
 	SLUŽBY SUBSITE
 **/
 
+/* #region  SLUZBY SUBSITE */
 main {
 	display: grid;
 	
@@ -323,7 +348,6 @@ main {
 	h3 {
 		font-family: $font-primary;
 		font-size: 60px;
-		color: $col-font-secondary;
 		text-align: center;
 		margin-top: 50px;
 		margin-bottom: 50px;
@@ -334,7 +358,6 @@ main {
 	display: grid;
 	max-width: calc-em(1100);
 	font-family: $font-secondary;
-	color: $col-font-secondary;
 	grid-template-columns: 48% 48%;
 	
 	column-gap: 4%;
@@ -360,7 +383,6 @@ main {
 
 .text {
 	font-family: $font-secondary;
-	color: $col-font-secondary;
 
 	h1, h2, h3, h4, h5, ul, li, p, b {
 		font-family: inherit;
@@ -386,16 +408,67 @@ main {
 		font-weight: 600;
 	}
 }
+/* #endregion */
 
-.weddings, .family, .portraits, .product_photo {
-	width: 100%;
-	height: auto;
-	padding-top: $header-height;
+/**
+	BLOG SUBSITE
+**/
+
+.blog {
+	display: block;
 }
 
+.post-container {
+	display: grid;
+	max-width: calc-em(1100);
+	margin: 0 auto;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 30px
+}
+
+.blog-post {
+	width: 100;
+	border: 1px solid #969696;
+	border-radius: 5px;
+
+	&:last-child {
+		margin-bottom: 30px;
+	}
+}
+
+.blog-image  {
+	width: 100%;
+
+	a img {
+	width: 100%;
+	border-radius: 5px;
+	}
+}
+
+.blog-perex {
+	padding: 2rem;
+
+	h4 {
+		font-size: 25px;
+		margin-bottom: 10px;
+	}
+}
+
+.blog-button {
+	display: block;
+	width: 120px;
+	height: 35px;
+	background-color: $col-font-primary;
+	color: $col-font-secondary;
+	text-align: center;
+	border-radius: 5px;
+	margin: 20px auto 0 auto;
+	line-height: 35px;
+}
 /**
 	PORTFOLIO
 **/
+/* #region  PORTFOLIO */
 
 .portfolio {
 	width: 1140px;
@@ -439,9 +512,12 @@ main {
 	}
 }
 
+/* #endregion */
+
 /**
-	LIGHTBOX
+LIGHTBOX
 **/
+/* #region  LIGHTBOX */
 #overlay {
 	display: none;
 	background: rgba($color: #000000, $alpha: 0.6);
@@ -469,6 +545,7 @@ main {
 		}
 	}
 }
+/* #endregion */
 
 
 /**
@@ -530,11 +607,11 @@ main {
 	.speech-bubble {
 		display: none;
 		position: relative;
-		background: darken($color: $col-background, $amount: 50%);
+		background: darken($color: $col-font-primary, $amount: 50%);
 		border-radius: .4em;
 		font-size: 0.8rem;
 		font-family: $font-secondary;
-		color: $col-font-primary;
+		color: $col-font-secondary;
 		padding: calc-em(10);
 		text-align: center;
 		margin-left: calc-em(0);
@@ -550,10 +627,14 @@ main {
 		width: 0;
 		height: 0;
 		border: 20px solid transparent;
-		border-right-color: darken($color: $col-background, $amount: 50%);
+		border-right-color: darken($color: $col-font-primary, $amount: 50%);
 		border-left: 0;
 		margin-top: -20px;
 		margin-left: -20px;
+	}
+
+	.post-container {
+		margin: 0 50px;
 	}
 
 }
@@ -584,7 +665,7 @@ main {
 		height: calc-em(50);
 		padding: 0 20px;
 		border-radius: 0;
-		background-color: darken($color: $col-background, $amount: 10%);
+		background-color: darken($color: $col-font-primary, $amount: 10%);
 		transform: scale(0);
 
 		&:first-child{
@@ -606,7 +687,7 @@ main {
 	}
 
 	.primary .list-item:hover {
-		background-color: darken($color: $col-background, $amount: 50%);
+		background-color: darken($color: $col-font-primary, $amount: 50%);
 		transition: background-color 350ms ease-in;
 	}
 
@@ -628,6 +709,10 @@ main {
 			justify-content: center;
 			height: 70px;
 			width: 100%;
+			
+			i {
+				color: $col-font-secondary;
+			}
 		}
 	}
 
@@ -678,14 +763,14 @@ main {
 		grid-column: 1 / 2;
 		grid-row: 2 / 3;
 		padding-bottom: 20px;
-		border-bottom: solid 2px $col-background;
+		border-bottom: solid 2px $col-font-primary;
 	}
 
 	.item-3 {
 		grid-column: 1 / 2;
 		grid-row: 4 / 5;
 		padding-bottom: 20px;
-		border-bottom: solid 2px $col-background;
+		border-bottom: solid 2px $col-font-primary;
 	}
 
 	.item-4 {
@@ -702,7 +787,7 @@ main {
 		grid-column: 1 / 2;
 		grid-row: 6 / 7;
 		padding-bottom: 20px;
-		border-bottom: solid 2px $col-background;
+		border-bottom: solid 2px $col-font-primary;
 	}
 
 	.item-7 {
@@ -730,7 +815,7 @@ main {
 		position: sticky;
 		z-index: 10;
 		bottom: 0;
-		background-color: darken($color: $col-background, $amount: 10%);
+		background-color: darken($color: $col-font-primary, $amount: 10%);
 		align-items: center;
 		flex-wrap: wrap;
 	}
@@ -749,7 +834,7 @@ main {
 			text-align: center;
 			line-height: calc-em(20);
 			border-radius: 50%;
-			border: solid 1px $col-font-primary;
+			border: solid 1px $col-font-secondary;
 			width: calc-em(23);
 			height: calc-em(23);
 			margin: 0 0 0 calc-em(10);
@@ -768,11 +853,11 @@ main {
 	.speech-bubble {
 		display: none;
 		position: relative;
-		background: darken($color: $col-background, $amount: 50%);
+		background: darken($color: $col-font-primary, $amount: 50%);
 		border-radius: .4em;
 		font-size: 0.8rem;
 		font-family: $font-secondary;
-		color: $col-font-primary;
+		color: $col-font-secondary;
 		padding: calc-em(10);
 		text-align: center;
 		margin-left: calc-em(0);
@@ -788,7 +873,7 @@ main {
 		width: 0;
 		height: 0;
 		border: 20px solid transparent;
-		border-right-color: darken($color: $col-background, $amount: 50%);
+		border-right-color: darken($color: $col-font-primary, $amount: 50%);
 		border-left: 0;
 		margin-top: -20px;
 		margin-left: -20px;
@@ -812,7 +897,7 @@ main {
 		}
 
 		.wrapper-left {
-			border-right: solid 2px $col-font-primary;
+			border-right: solid 2px $col-font-secondary;
 		}
 			
 	
@@ -841,7 +926,16 @@ main {
 			}
 		}
 	}
+
+	.post-container {
+		display: grid;
+		max-width: calc-em(1100);
+		margin: 0 50px;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 30px
+		
 	
+	}
 }
 
 @media screen and (max-width: 600px) {
@@ -852,6 +946,18 @@ main {
 		a {
 			margin: 0;
 		}	
+	}
+
+	.post-container {
+		display: grid;
+		max-width: calc-em(1100);
+		margin: 0 30px;
+		grid-template-columns: repeat(1, 1fr);
+		grid-gap: 30px
+	}
+
+	.blog-perex {
+		padding: 1rem;
 	}
 }
 

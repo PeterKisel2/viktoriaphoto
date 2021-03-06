@@ -1,41 +1,41 @@
 /**
 slick slider (with media query)
 **/
-
-$(document).ready( function(){
-  const matchResult = window.matchMedia('(max-width: 850px)');
-    
-    
-    if (matchResult.matches == true) {
-
-      $('.slider-portrait').slick({
-        autoplay: false,
-        autoplaySpeed: 3000,
-        dots: false,
-        infinite: true,
-        fade: true,
-        speed: 1200,
-        adaptiveHeight: false,
-        focusOnSelect: true,
-        arrows: false
-      });
-
-    } else {
+if ($('body').hasClass('main-site')) {
+  $(document).ready( function(){
+    const matchResult = window.matchMedia('(max-width: 850px)');
       
-      $('.slider-landscape').slick({
-        autoplay: true,
-        autoplaySpeed: 3000,
-        dots: true,
-        infinite: true,
-        fade: true,
-        speed: 1200,
-        adaptiveHeight: false,
-        focusOnSelect: true,
-        arrows: false
-      });
-    }
-});
+      
+      if (matchResult.matches == true) {
 
+        $('.slider-portrait').slick({
+          autoplay: false,
+          autoplaySpeed: 3000,
+          dots: false,
+          infinite: true,
+          fade: true,
+          speed: 1200,
+          adaptiveHeight: false,
+          focusOnSelect: true,
+          arrows: false
+        });
+
+      } else {
+        
+        $('.slider-landscape').slick({
+          autoplay: true,
+          autoplaySpeed: 3000,
+          dots: true,
+          infinite: true,
+          fade: true,
+          speed: 1200,
+          adaptiveHeight: false,
+          focusOnSelect: true,
+          arrows: false
+        });
+      }
+  });
+};
 
 /** 
 MY SLIDER
@@ -132,6 +132,11 @@ $(document).ready(function(){
   });
 });
 
+
+/**
+FLIPDOWN COUNTDOWN TIMER 
+ */
+/**
 if ($('body').hasClass('services')) {
 
       document.addEventListener('DOMContentLoaded', () => {
@@ -158,11 +163,11 @@ if ($('body').hasClass('services')) {
           body.querySelector('#flipdown').classList.toggle('flipdown__theme-dark');
           body.querySelector('#flipdown').classList.toggle('flipdown__theme-light');
         }, 5000);
-        */
+        
 
       });
 }
-
+**/
         
 var subMenu = $(".sub"),
     menuLinks = subMenu.find("a");     

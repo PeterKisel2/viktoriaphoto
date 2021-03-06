@@ -1,10 +1,10 @@
 //colors
-$col-background: #454545;
-$col-font-primary: #D9D9D9;
-$col-font-secondary: #454545;
+$col-background: #D9D9D9;
+$col-font-primary: #454545;
+$col-font-secondary: #D9D9D9;
 
-$gradient-start: darken($color: $col-background, $amount: 10%);
-$gradient-end: darken($color: $col-background, $amount: 10%);
+$gradient-start: darken($color: $col-font-primary, $amount: 10%);
+$gradient-end: darken($color: $col-font-primary, $amount: 10%);
 
 //font families
 $font-menu: 'Oswald', sans-serif;
@@ -20,5 +20,5 @@ $fa-font-path: "../fontawesome/webfonts";
 //footer height
 $footer-height: calc-em(70);
 
-//header height
+//header height #D9D9D9
 $header-height: calc-em(70);
