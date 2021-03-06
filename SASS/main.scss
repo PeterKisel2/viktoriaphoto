@@ -338,7 +338,7 @@ transform: translateX(-50%);
 **/
 
 /* #region  SLUZBY SUBSITE */
-main {
+.services-main {
 	display: grid;
 	
 	justify-content: center;
@@ -413,6 +413,7 @@ main {
 /**
 	BLOG SUBSITE
 **/
+/* #region BLOG  */
 
 .blog {
 	display: block;
@@ -465,50 +466,38 @@ main {
 	margin: 20px auto 0 auto;
 	line-height: 35px;
 }
+/* #endregion */
+
 /**
 	PORTFOLIO
 **/
 /* #region  PORTFOLIO */
 
 .portfolio {
-	width: 1140px;
-	height: 500px;
-	margin-top: 100px;
+	height: 100vh;
 }
 
-.gallery-3 {
-
-	line-height: 0;
-	-webkit-column-count: 3;
-	-webkit-column-gap:   5px;
-	-moz-column-count:    3;
-	-moz-column-gap:      5px;
-	column-count:         3;
-	column-gap:           5px;
-	height: 100%;
-
-	img {
-		width: 100%;
-		height: auto;
-		margin-bottom: 5px;
-	}
+.portfolio-main {
+	max-width: 1140px;
+	height: auto;
+	margin: 100px auto 0 auto;
 }
 
-.gallery-2 {
+.masonry-columns {
+	columns: 6 200px;
+	column-gap: 1rem;
 
-	line-height: 0;
-	-webkit-column-count: 2;
-	-webkit-column-gap:   5px;
-	-moz-column-count:    2;
-	-moz-column-gap:      5px;
-	column-count:         2;
-	column-gap:           5px;
-	height: 100%;
-
-	img {
-		width: 100%;
+	a {
+		display: block;
+		margin: 0 1rem 1rem 0;
+		display: inline-block;
+		max-width: 100%;
 		height: auto;
-		margin-bottom: 5px;
+
+		img {
+			max-width: 100%;
+
+		}
 	}
 }
 
