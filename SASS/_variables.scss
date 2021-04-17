@@ -1,0 +1,24 @@
+//colors
+$col-background: #454545;
+$col-font-primary: #D9D9D9;
+$col-font-secondary: #0295AF;
+
+$gradient-start: darken($color: $col-background, $amount: 10%);
+$gradient-end: darken($color: $col-background, $amount: 10%);
+
+//font families
+$font-menu: 'Oswald', sans-serif;
+$font-primary: 'Dancing Script', cursive;
+$font-secondary: 'Lora', serif;
+
+//font size
+$font-menu-size: 25;
+
+//font awesome PATH
+$fa-font-path: "../fontawesome/webfonts";
+
+//footer height
+$footer-height: calc-em(70);
+
+//header height
+$header-height: calc-em(70);
